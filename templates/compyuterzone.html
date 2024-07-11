@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .form{
+       padding: 150px 0px;
+       margin: 0px 200px;
+    }
+    .control{
+        width: 100%;
+        border-radius: 10px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+    }
+</style>
+<div class="container">
+    <form class="form" name="sentMessage" method="post">
+        <h1 style="margin-bottom: 50px; color: white; text-align: center;">Your's Comand</h1>
+        {% csrf_token %}
+        <h5 style="color: white; border-radius: 10px; width: 30px;">
+            {{ form }}
+        </h5>
+        <div style="margin: 0px 270px; margin-top: 20px;">
+            <button class="btn custom-btn" type="submit">Send Message</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

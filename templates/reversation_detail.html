@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Reservation Detail</h1>
+<p><strong>User:</strong> {{ reservation.user }}</p>
+<p><strong>PC:</strong> {{ reservation.pc }}</p>
+<p><strong>Start Time:</strong> {{ reservation.start_time }}</p>
+<p><strong>End Time:</strong> {{ reservation.end_time }}</p>
+<a href="{% url 'reservation_update' reservation.id %}">Update</a>
+<form action="{% url 'reservation_delete' reservation.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+<a href="{% url 'reservation_list' %}">Back to Reservation List</a>
+{% endblock %}

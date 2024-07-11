@@ -1,0 +1,43 @@
+<!-- {% extends "base.html" %} -->
+
+<!-- {% block content %} -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+
+<div style="margin: 0px 400px; margin-top: 100px; border: 2px solid white; width: 500px; margin-right: 100px; height: 400px;">
+    {% for profile in profiles %}
+        <p style="border-radius: 100%;margin-left: 230px; margin-top: 100px;"><img src="media/dishes/2024/{{ profile.img }}"></p>
+        <p style="font-size: 30px; font-weight: bold;text-align: center; color: white;">{{ profile.name }}</p>
+        <p style="text-align: center; margin-left: 10px; font-size: 20px; color: white;">{{ profile.bio }}</p>
+        <a style="margin-left: 230px;" href="#">View profile</a>
+    {% endfor %}
+</div>
+<!-- 
+{% endblock %} -->
